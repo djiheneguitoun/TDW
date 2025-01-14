@@ -1,0 +1,58 @@
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .menu-item {
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .menu-item2 {
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .menu-item:hover {
+            transform: translateX(8px);
+        }
+
+        .nav-container {
+          
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        .nav-container::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .nav-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .nav-container::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .sidebar {
+            background: linear-gradient(135deg, #643869 0%, #4A2850 100%);
+        }
+
+        .icon-container {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .menu-item:hover .icon-container {
+            background: rgba(255, 124, 80, 0.15);
+            box-shadow: 0 0 20px rgba(255, 124, 80, 0.1);
+        }
+
+        .active-menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #FF7C50;
+        }
+     
+       
