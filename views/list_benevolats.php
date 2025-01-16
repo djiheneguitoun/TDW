@@ -8,13 +8,11 @@
 </head>
 <body class="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-        <!-- Header Section -->
         <div class="mb-8 text-center animate-fade-in">
             <h1 class="text-4xl font-bold text-[#643869] mb-4">Liste des Bénévolats</h1>
             <div class="w-32 h-1.5 bg-[#FF7C50] mx-auto rounded-full"></div>
         </div>
 
-        <!-- Table Container -->
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden animate-fade-in" style="animation-delay: 100ms;">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">

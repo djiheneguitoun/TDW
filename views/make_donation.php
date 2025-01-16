@@ -7,16 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-purple-50 flex items-center mx-auto p-4 relative overflow-hidden">
-    <!-- Creative background patterns -->
 
     <div class="mx-auto max-w-xl relative z-10">
       <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-8 relative border border-white">
-        <!-- Header with creative elements -->
         <div class="text-center mb-10 relative">
           <h1 class="text-4xl font-black text-[#643869] tracking-tight mt-16 mb-2">Faire un Don</h1>
           <p class="text-gray-600">Votre générosité illumine des vies</p>
 
-          <!-- Decorative line with dots -->
           <div class="flex items-center justify-center gap-2 mt-4">
             <div class="w-2 h-2 rounded-full bg-[#FF7C50]"></div>
             <div class="w-12 h-0.5 bg-[#FF7C50]"></div>
@@ -24,7 +21,6 @@
           </div>
         </div>
 
-        <!-- Success Message Display -->
         <?php if (isset($_SESSION['success_message']) ): ?>
     <div id="success-message" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
         <strong class="font-bold">Succès!</strong>
@@ -38,13 +34,11 @@
         </span>
     </div>
     <script>
-        // Select the close button and the alert container
         const closeAlert = document.querySelector('.close-alert');
         const alertBox = document.getElementById('success-message');
 
-        // Add click event listener
         closeAlert.addEventListener('click', () => {
-            alertBox.style.display = 'none'; // Hide the alert box
+            alertBox.style.display = 'none'; 
         });
     </script>
 <?php endif; ?>
@@ -52,7 +46,6 @@
         <form action="/elmuntada/make-donation" method="POST" enctype="multipart/form-data" class="space-y-6">
           <input type="hidden" name="utilisateur_id" value="<?php echo $_SESSION['utilisateur_id']; ?>">
 
-          <!-- Amount Input with creative styling -->
           <div class="space-y-2">
             <label for="montant" class="block text-sm font-semibold text-[#643869] flex items-center gap-2">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -72,7 +65,6 @@
             </div>
           </div>
 
-          <!-- File Upload with creative styling -->
           <div class="space-y-2">
             <label for="recu_paiement" class="block text-sm font-semibold text-[#643869] flex items-center gap-2">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -89,7 +81,6 @@
             </div>
           </div>
 
-          <!-- Submit Button with creative animation -->
           <button type="submit"
                   class="relative w-full bg-[#643869] text-white font-bold py-4 px-6 rounded-2xl hover:bg-[#FF7C50] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-[#FF7C50]/25 overflow-hidden group">
             <span class="relative z-10">Faire un Don</span>

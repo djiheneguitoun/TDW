@@ -70,15 +70,12 @@
                 $villeCount = [];
                 $partnerCount = [];
 
-                // Calculer les rowspans
                 foreach ($filteredAvantagesData as $avantage) {
-                    // Compter par ville
                     if (!isset($villeCount[$avantage['ville']])) {
                         $villeCount[$avantage['ville']] = 0;
                     }
                     $villeCount[$avantage['ville']]++;
 
-                    // Compter par partenaire dans une ville
                     $villePartnerKey = $avantage['ville'] . '-' . $avantage['nom_etabisement'];
                     if (!isset($partnerCount[$villePartnerKey])) {
                         $partnerCount[$villePartnerKey] = 0;
@@ -90,12 +87,11 @@
                     $showVille = false;
                     $showPartner = false;
 
-                    // Vérifier nouvelle ville
                     if ($currentVille !== $avantage['ville']) {
                         $currentVille = $avantage['ville'];
                         $showVille = true;
                         $rowspanVille = $villeCount[$currentVille];
-                        $currentPartner = null; // Réinitialiser partenaire pour nouvelle ville
+                        $currentPartner = null; 
                     }
 
                     // Vérifier nouveau partenaire dans cette ville
@@ -172,15 +168,12 @@ function renderTable(data) {
     let villeCount = {};
     let partnerCount = {};
 
-    // Calculer les rowspans
     data.forEach(avantage => {
-        // Compter par ville
         if (!villeCount[avantage.ville]) {
             villeCount[avantage.ville] = 0;
         }
         villeCount[avantage.ville]++;
 
-        // Compter par partenaire dans une ville
         const villePartnerKey = avantage.ville + '-' + avantage.nom_etabisement;
         if (!partnerCount[villePartnerKey]) {
             partnerCount[villePartnerKey] = 0;
@@ -192,15 +185,13 @@ function renderTable(data) {
         let showVille = false;
         let showPartner = false;
 
-        // Vérifier nouvelle ville
         if (currentVille !== avantage.ville) {
             currentVille = avantage.ville;
             showVille = true;
             rowspanVille = villeCount[currentVille];
-            currentPartner = null; // Réinitialiser partenaire pour nouvelle ville
+            currentPartner = null; 
         }
 
-        // Vérifier nouveau partenaire dans cette ville
         const villePartnerKey = avantage.ville + '-' + avantage.nom_etabisement;
         if (currentPartner !== villePartnerKey) {
             currentPartner = villePartnerKey;
@@ -220,7 +211,7 @@ villeCell.style.borderBottom = '1px solid #D5CCD6';
 
 const villeSpan = document.createElement('span');
 villeSpan.textContent = avantage.ville;
-villeSpan.classList.add( 'font-meduim', 'bg-[#FF7C50]/10','text-[#FF7C50]','rounded-lg','px-3','py-1'); // Add any specific Tailwind classes for styling
+villeSpan.classList.add( 'font-meduim', 'bg-[#FF7C50]/10','text-[#FF7C50]','rounded-lg','px-3','py-1'); 
 
 villeCell.appendChild(villeSpan);
 
@@ -256,7 +247,6 @@ row.appendChild(villeCell);
         const conditionsCell = document.createElement('td');
 conditionsCell.classList.add('py-4', 'px-6', 'border-y', 'border-[#D5CCD6]');
 
-// Create a span for the conditions text
 const conditionsSpan = document.createElement('span');
 conditionsSpan.textContent = avantage.conditions;
 conditionsSpan.classList.add(
@@ -264,44 +254,35 @@ conditionsSpan.classList.add(
     'bg-[#643869]/10', 'text-[#643869]', 'font-medium'
 );
 
-// Append the span to the conditionsCell
 conditionsCell.appendChild(conditionsSpan);
 
-// Append the conditionsCell to the row
 row.appendChild(conditionsCell);
 
 
      const valeurRemiseCell = document.createElement('td');
 valeurRemiseCell.classList.add('py-4', 'px-6', 'border-y', 'border-[#D5CCD6]');
 
-// Create a wrapper div with flex layout
 const wrapperDiv = document.createElement('div');
 wrapperDiv.classList.add('flex', 'items-center', 'space-x-2');
 
-// Create the small animated dot
 const dotDiv = document.createElement('div');
 dotDiv.classList.add('w-2', 'h-2', 'rounded-full', 'bg-[#FF7C50]', 'animate-pulse');
 
-// Create the span for the valeur_remise text
 const valeurRemiseSpan = document.createElement('span');
 valeurRemiseSpan.textContent = avantage.valeur_remise;
 valeurRemiseSpan.classList.add('font-bold', 'text-[#FF7C50]');
 
-// Append the dot and span to the wrapper div
 wrapperDiv.appendChild(dotDiv);
 wrapperDiv.appendChild(valeurRemiseSpan);
 
-// Append the wrapper div to the cell
 valeurRemiseCell.appendChild(wrapperDiv);
 
-// Append the cell to the row
 row.appendChild(valeurRemiseCell);
 
 
  const statutCell = document.createElement('td');
 statutCell.classList.add('py-4', 'px-6', 'border-y', 'border-[#D5CCD6]');
 
-// Determine status and set up classes and text
 const isActive = avantage.statut === 'actif';
 const statusSpan = document.createElement('span');
 statusSpan.classList.add(
@@ -311,23 +292,18 @@ statusSpan.classList.add(
     isActive ? 'text-green-800' : 'text-gray-800'
 );
 
-// Create the small status dot
 const statusDot = document.createElement('span');
 statusDot.classList.add(
     'w-1.5', 'h-1.5', 'rounded-full', 'mr-1.5',
     isActive ? 'bg-green-600' : 'bg-gray-500'
 );
 
-// Add the status text
 statusSpan.textContent = isActive ? 'Actif' : 'Inactif';
 
-// Prepend the dot to the span
 statusSpan.prepend(statusDot);
 
-// Append the span to the cell
 statutCell.appendChild(statusSpan);
 
-// Append the cell to the row
 row.appendChild(statutCell);
 
   
@@ -343,7 +319,6 @@ function renderSimpleTable(data) {
         const row = document.createElement('tr');
         row.classList.add('bg-white', 'text-black');
 
-        // Create all cells without rowspan logic
         const cells = [
             { content: avantage.ville },
             { content: avantage.nom_etabisement },
@@ -353,7 +328,6 @@ function renderSimpleTable(data) {
             { content: avantage.conditions },
             { content: avantage.valeur_remise },
             { content: avantage.statut },
-           // Ensure this field is correctly accessed
         ];
 
         cells.forEach(cellData => {
@@ -368,10 +342,9 @@ function renderSimpleTable(data) {
 }
 
 function sortData(data, sortBy) {
-    const sortedData = [...data]; // Create a copy to avoid modifying original data
+    const sortedData = [...data]; 
 
     if (sortBy === 'ville') {
-        // Special handling for ville sorting to maintain partner grouping
         return sortedData.sort((a, b) => {
             const villeCompare = a.ville.localeCompare(b.ville);
             if (villeCompare === 0) {
@@ -380,7 +353,6 @@ function sortData(data, sortBy) {
             return villeCompare;
         });
     } else {
-        // Regular sorting for other columns
         return sortedData.sort((a, b) => {
             if (typeof a[sortBy] === 'string') {
                 return a[sortBy].localeCompare(b[sortBy]);
@@ -401,9 +373,9 @@ function filterData(data, filterText) {
 document.getElementById('sortSelect').addEventListener('change', (event) => {
     const sortedData = sortData(filteredAvantagesData, event.target.value);
     if (event.target.value === 'ville') {
-        renderTable(sortedData); // Use original grouped rendering for ville sorting
+        renderTable(sortedData); 
     } else {
-        renderSimpleTable(sortedData); // Use simple rendering for other sorts
+        renderSimpleTable(sortedData); 
     }
 });
 

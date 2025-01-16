@@ -1,11 +1,13 @@
 
-<div class="container p-4 pt-10  bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')]" id="partenaires-section ">
-  <h2 class="text-[#643869] text-center text-3xl font-bold py-6">Nos Partenaires</h2>
+<div class="container p-4 pt-10" id="partenaires-section ">
+  <div class="text-[#643869] text-center text-3xl font-bold py-6">
+    <a href="elmuntada/catalogue">Nos Partenaires</a>
+  </div>
   <div class="carousel relative overflow-hidden">
       <div class="carousel-inner flex transition-transform duration-500 ">
           <?php foreach ($partenairesData as $partenaire): ?>
               <div class="carousel-item flex-shrink-0 w-48 mx-4 transform hover:scale-150 transition-transform duration-300">
-                <img src="/elmuntada/assets/images/logo.png" alt="<?= htmlspecialchars($partenaire['nom_etabisement']) ?>" class="mx-auto w-24 h-24 object-contain">              </div>
+                <img src="uploads/<?php echo htmlspecialchars($partenaire['logo']); ?>" alt="<?= htmlspecialchars($partenaire['nom_etabisement']) ?>" class="mx-auto w-40 h-40 object-contain">              </div>
           <?php endforeach; ?>
       </div>
   </div>

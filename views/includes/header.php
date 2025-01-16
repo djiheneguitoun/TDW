@@ -20,7 +20,7 @@
       }
     </style>
   </head>
-  <body class=" bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')]">  
+  <body class=" ">  
     <div>
     </div>
     <nav class="w-full z-50">
@@ -36,16 +36,18 @@
         </div>
 
         <div class="flex items-center gap-8">
-          <a href="#" class="font-medium hover:text-[#FF7C50] transition-colors"
+          <a href="#hero" class="font-medium hover:text-[#FF7C50] transition-colors"
             >À propos</a
           >
-          <a href="#" class="font-medium hover:text-[#FF7C50] transition-colors"
-            >Avis</a
+          <a href="#annonces" class="font-medium hover:text-[#FF7C50] transition-colors"
+            >Annonces</a
           >
-          <a href="#" class="font-medium hover:text-[#FF7C50] transition-colors"
-            >Contact</a
+          <a href="#avantages-section" class="font-medium hover:text-[#FF7C50] transition-colors"
+            >Avantages</a
           >
-
+          <a href="#partenaires-section " class="font-medium hover:text-[#FF7C50] transition-colors"
+            >Partenaires</a
+          >
         </div>
         <div class="flex gap-6 ml-4 pl-6 border-l border-[#643869]/20">
           <a href="#" class="text-lg transition-transform hover:scale-125"

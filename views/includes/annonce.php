@@ -1,4 +1,4 @@
-<div class="container mx-auto p-4  bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')]">
+<div id="annonces" class="container mx-auto p-4  ">
    <h1 class="text-[#643869] text-center text-5xl font-bold py-10">NOS DERNIER </h1>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       <?php foreach ($annoncesData as $annonce): ?>

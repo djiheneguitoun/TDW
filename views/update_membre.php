@@ -7,16 +7,12 @@
         <div class="absolute bottom-0 left-[20%] w-[600px] h-[600px] bg-gradient-to-t from-primary/20 to-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float" style="animation-delay: -4s;"></div>
     </div>
     <div class="max-w-xl mx-auto relative z-40">
-        <!-- Glass Card -->
         <div class="bg-white/80 backdrop-blur-xl p-10 rounded-3xl shadow-[0_8px_32px_rgba(100,56,105,0.15)] relative overflow-hidden group">
-            <!-- Permanent Card Background Animation -->
             <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 animate-gradient"></div>
             
-            <!-- Decorative Corner Elements -->
             <div class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-br-3xl animate-pulse-slow"></div>
             <div class="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-secondary/20 to-transparent rounded-tl-3xl animate-pulse-slow" style="animation-delay: -2s;"></div>
 
-            <!-- Header -->
             <div class="mb-10 text-center relative">
                 <h2 class="text-4xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
                     Update Profile
@@ -25,7 +21,6 @@
             </div>
 
             <form action="/elmuntada/membre-dashboard/update-handle" method="POST" class="space-y-6">
-                <!-- Name Fields Group -->
                 <div class="grid grid-cols-2 gap-6">
                     <div class="relative">
                         <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl blur opacity-30"></div>
@@ -47,7 +42,6 @@
                     </div>
                 </div>
 
-                <!-- Email Field -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl blur opacity-30"></div>
                     <div class="relative">
@@ -58,7 +52,6 @@
                     </div>
                 </div>
 
-                <!-- Password Field -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl blur opacity-30"></div>
                     <div class="relative">
@@ -69,7 +62,6 @@
                     </div>
                 </div>
 
-                <!-- Address Field -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl blur opacity-30"></div>
                     <div class="relative">
@@ -80,7 +72,6 @@
                     </div>
                 </div>
 
-                <!-- Phone Field -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl blur opacity-30"></div>
                     <div class="relative">
@@ -91,7 +82,6 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
                 <div class="flex justify-end pt-4">
                     <button type="submit" 
                         class="group relative px-8 py-3.5 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient text-white rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(100,56,105,0.3)]">

@@ -65,7 +65,6 @@
             <div class="w-16 h-0.5 bg-white/50 mx-auto mt-2"></div>
           </div>
 
-          <!-- Member Photo -->
           <div
             class="absolute top-[80px] left-[25px] w-[100px] h-[120px] border-2 border-white/50 overflow-hidden shadow-xl rounded-lg"
           >
@@ -76,7 +75,6 @@
             />
           </div>
 
-          <!-- QR Code -->
           <div
             class="absolute top-[80px] right-[25px] w-[80px] h-[80px] bg-white p-[5px] rounded-lg shadow-xl"
           >
@@ -125,7 +123,6 @@
       >
         <?php if (strtotime($carte['date_expiration']) >
         time()) : ?>
-        <!-- Active Status -->
         <div class="p-6 bg-gray-50 border-b border-gray-100">
           <div class="flex items-center gap-4">
             <div
@@ -322,7 +319,7 @@
 
       if (file) {
         const fileName = file.name;
-        const fileSize = (file.size / (1024 * 1024)).toFixed(2); // Convert to MB
+        const fileSize = (file.size / (1024 * 1024)).toFixed(2);
         fileNameElement.textContent = `${fileName} (${fileSize}MB)`;
         fileInfo.classList.remove("opacity-0");
         fileInfo.classList.add("opacity-100");

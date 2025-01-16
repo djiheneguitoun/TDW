@@ -1,4 +1,4 @@
-<section class="flex items-center justify-between  bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')]">
+<section id="hero" class="flex items-center justify-between ">
       <div class="w-full md:w-1/2 pl-20">
         <h1
           class="text-5xl font-bold bg-gradient-to-r from-[#643869] to-[#FF7C50] bg-clip-text text-transparent mb-4"
@@ -9,7 +9,13 @@
           Simplifiez l'entraide, maximisez l'impact.
         </p>
         <div class="inline-flex items-center bg-[#643869] text-white text-sm font-semibold py-3 px-6 rounded-full transition-all">
-            <a href="" class="mr-3">Devenir membre</a>
+            <a href="/elmuntada/inscription" class="mr-3">Inscrivez-vous</a>
+           <div class="flex items-center justify-center bg-white text-[#643869] rounded-full p-2">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="inline-flex items-center bg-[#643869] text-white text-sm font-semibold py-3 px-6 rounded-full transition-all">
+            <a href="/elmuntada/login" class="mr-3">Connectez-vous</a>
            <div class="flex items-center justify-center bg-white text-[#643869] rounded-full p-2">
               <i class="fas fa-arrow-right"></i>
             </div>

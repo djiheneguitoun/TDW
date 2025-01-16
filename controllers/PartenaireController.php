@@ -68,19 +68,15 @@ class PartenaireController {
             $details = $_POST['details'];
             $ville = $_POST['ville'];
 echo "am in add partenaire2";
-            // Upload du logo
             $logo = $_FILES['logo']['name'];
             $logo_tmp = $_FILES['logo']['tmp_name'];
             $logo_path = 'uploads/' . $logo;
             move_uploaded_file($logo_tmp, $logo_path);
 echo "am in add partenaire3";
-            // Créer un utilisateur
             $utilisateur_id = $this->utilisateur->createUtilisateur($nom, $prenom, $email, $mot_de_passe);
 echo "am in add partenaire4";
-            // Créer un partenaire
             $this->partenaire->createPartenaire($utilisateur_id, $nom_etabisement, $remise_percentage, $categorie_id, $details, $ville, $logo);
 echo "am in add partenaire5";
-            // Rediriger vers la page des partenaires
            
         }
     }

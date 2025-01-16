@@ -197,7 +197,6 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'admin') {
     document.addEventListener('DOMContentLoaded', function() {
         const menuItems = document.querySelectorAll('.menu-item');
 
-        // Initialize Feather icons on page load
         
         const currentPath = window.location.pathname;
         menuItems.forEach(item => {
@@ -214,7 +213,6 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'admin') {
         });
 
 
-         // Load the update profile page by default
     if (currentPath === '/elmuntada/admin-dashboard') {
         loadContent('/elmuntada/validate-membres');
     }
@@ -223,10 +221,8 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'admin') {
     fetch(path)
         .then(response => response.text())
         .then(data => {
-            // Set the inner HTML of the content div
             document.querySelector('.content').innerHTML = data;
 
-            // Extract and execute any script tags in the loaded content
             const scripts = document.querySelector('.content').querySelectorAll('script');
             scripts.forEach(script => {
                 const newScript = document.createElement('script');
@@ -245,7 +241,6 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'admin') {
                 document.body.appendChild(newScript).remove();
             });
 
-            // Replace Feather icons
             feather.replace();
         })
         .catch(error => console.error('Error loading content:', error));

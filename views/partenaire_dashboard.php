@@ -109,7 +109,6 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'partenaire') {
         });
 
 
-         // Load the update profile page by default
     if (currentPath === '/elmuntada/partenaire-dashboard') {
         loadContent('/elmuntada/scan-qr-code');
     }
@@ -118,10 +117,8 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'partenaire') {
     fetch(path)
         .then(response => response.text())
         .then(data => {
-            // Set the inner HTML of the content div
             document.querySelector('.content').innerHTML = data;
 
-            // Extract and execute any script tags in the loaded content
             const scripts = document.querySelector('.content').querySelectorAll('script');
             scripts.forEach(script => {
                 const newScript = document.createElement('script');
@@ -140,7 +137,6 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'partenaire') {
                 document.body.appendChild(newScript).remove();
             });
 
-            // Replace Feather icons
             feather.replace();
         })
         .catch(error => console.error('Error loading content:', error));

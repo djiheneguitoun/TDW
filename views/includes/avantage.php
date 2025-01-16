@@ -17,7 +17,6 @@
             </thead>
             <tbody>
                 <?php
-                // Tri par ville, puis partenaire, puis type de carte
                 usort($avantagesData, function($a, $b) {
                     $villeCompare = strcmp($a['ville'], $b['ville']);
                     if ($villeCompare === 0) {
@@ -40,22 +39,18 @@
                 $partnerCount = [];
                 $typeCount = [];
 
-                // Calculer les rowspans
                 foreach ($avantagesData as $avantage) {
-                    // Compter par ville
                     if (!isset($villeCount[$avantage['ville']])) {
                         $villeCount[$avantage['ville']] = 0;
                     }
                     $villeCount[$avantage['ville']]++;
 
-                    // Compter par partenaire dans une ville
                     $villePartnerKey = $avantage['ville'] . '-' . $avantage['nom_etabisement'];
                     if (!isset($partnerCount[$villePartnerKey])) {
                         $partnerCount[$villePartnerKey] = 0;
                     }
                     $partnerCount[$villePartnerKey]++;
 
-                    // Compter par type de carte pour un partenaire
                     $partnerTypeKey = $villePartnerKey . '-' . $avantage['type_carte_nom'];
                     if (!isset($typeCount[$partnerTypeKey])) {
                         $typeCount[$partnerTypeKey] = 0;
@@ -68,24 +63,21 @@
                     $showPartner = false;
                     $showType = false;
 
-                    // Vérifier nouvelle ville
                     if ($currentVille !== $avantage['ville']) {
                         $currentVille = $avantage['ville'];
                         $showVille = true;
                         $rowspanVille = $villeCount[$currentVille];
-                        $currentPartner = null; // Réinitialiser partenaire pour nouvelle ville
+                        $currentPartner = null; 
                     }
 
-                    // Vérifier nouveau partenaire dans cette ville
                     $villePartnerKey = $avantage['ville'] . '-' . $avantage['nom_etabisement'];
                     if ($currentPartner !== $villePartnerKey) {
                         $currentPartner = $villePartnerKey;
                         $showPartner = true;
                         $rowspanPartner = $partnerCount[$villePartnerKey];
-                        $currentType = null; // Réinitialiser type pour nouveau partenaire
+                        $currentType = null; 
                     }
 
-                    // Vérifier nouveau type de carte pour ce partenaire
                     $partnerTypeKey = $villePartnerKey . '-' . $avantage['type_carte_nom'];
                     if ($currentType !== $partnerTypeKey) {
                         $currentType = $partnerTypeKey;

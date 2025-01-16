@@ -19,9 +19,9 @@
     </style>
   </head>
   <body >
-<div class="min-h-screen bg-gradient-to-br from-[#643869] to-[#FD7A4E]/20 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
     <div class="container mx-auto max-w-2xl">
-        <h1 class="text-4xl font-bold mb-8 text-center text-white drop-shadow-lg">
+        <h1 class="text-4xl font-bold mb-8 text-[#643869] text-center  drop-shadow-lg">
             Formulaire de Demande de Membre
         </h1>
 

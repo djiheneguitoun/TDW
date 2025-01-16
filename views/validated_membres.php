@@ -35,10 +35,8 @@
                 <div class="h-1 w-32 bg-custom-orange mx-auto rounded-full"></div>
             </div>
 
-            <!-- Enhanced Filter Section -->
             <div class="bg-white rounded-2xl shadow-lg p-6 mb-8 animate-fade-in">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Search Input -->
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,7 +47,6 @@
                                class="pl-10 w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent transition-all duration-200">
                     </div>
 
-                    <!-- Card Type Filter -->
                     <div>
                         <select id="cardTypeFilter" class=" text-sm w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent appearance-none bg-white transition-all duration-200">
                             <option value="">Type de Carte</option>
@@ -59,7 +56,6 @@
                         </select>
                     </div>
 
-                    <!-- Sort Options -->
                     <div>
                         <select id="sortSelect" class=" text-sm w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent appearance-none bg-white transition-all duration-200">
                             <option value="">Trier par</option>
@@ -70,7 +66,6 @@
                         </select>
                     </div>
 
-                    <!-- Sort Direction -->
                     <div>
                         <button id="sortDirection" class=" text-sm w-full px-4 py-3 bg-custom-purple text-white rounded-xl hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center gap-2">
                             <span>Ordre Croissant</span>
@@ -82,7 +77,6 @@
                 </div>
             </div>
 
-            <!-- Table Section -->
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
                 <table class="min-w-full">
                     <thead class="bg-custom-purple text-white">
@@ -108,7 +102,7 @@
                             <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['adresse']); ?></td>
                             <td class="text-sm py-4 px-6">
     <?php 
-        $cardClass = 'bg-gray-100 text-gray-800'; // default style
+        $cardClass = 'bg-gray-100 text-gray-800'; 
         
         if ($membre['type_carte_nom'] === 'premium') {
             $cardClass = 'bg-purple-100 text-purple-800';
@@ -153,7 +147,6 @@
         </div>
     </div>
 
-    <!-- Modal remains the same -->
     <div id="membrePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-4 relative transform transition-all duration-300">
             <button id="closePiiiiw" class="absolute top-4 right-4 text-gray-500 hover:text-custom-purple transition-colors">
@@ -163,7 +156,6 @@
             </button>
 
             <div id="membreDetails" class="space-y-8">
-                <!-- En-tête avec informations personnelles -->
                 <div class="border-b border-gray-200 pb-6">
                     <h2 class="text-2xl font-bold text-custom-purple mb-2">
                         <?php echo htmlspecialchars($membre['nom']); ?> <?php echo htmlspecialchars($membre['prenom']); ?>
@@ -190,11 +182,9 @@
                     </div>
                 </div>
 
-                <!-- Section des documents -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-semibold text-custom-purple">Documents du membre</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Photo de profil -->
                         <div class="space-y-3">
                             <div class="aspect-square rounded-xl overflow-hidden shadow-lg border-4 border-custom-orange">
                                 <img src="uploads/<?php echo htmlspecialchars($membre['photo']); ?>" alt="Photo de profil" class="w-full h-full object-cover">
@@ -202,7 +192,6 @@
                             <p class="text-center font-medium text-custom-purple">Photo de profil</p>
                         </div>
 
-                        <!-- Carte d'identité -->
                         <div class="space-y-3">
                             <div class="aspect-square rounded-xl overflow-hidden shadow-lg border-4 border-custom-purple">
                                 <img src="uploads/<?php echo htmlspecialchars($membre['piece_identite']); ?>" alt="Carte d'identité" class="w-full h-full object-cover">
@@ -210,7 +199,6 @@
                             <p class="text-center font-medium text-custom-purple">Carte d'identité</p>
                         </div>
 
-                        <!-- Reçu de paiement -->
                         <div class="space-y-3">
                             <div class="aspect-square rounded-xl overflow-hidden shadow-lg border-4 border-custom-orange">
                                 <img src="uploads/<?php echo htmlspecialchars($membre['recu_paiement']); ?>" alt="Reçu de paiement" class="w-full h-full object-cover">
@@ -224,7 +212,6 @@
     </div>
 
     <script>
-           // Check if each variable is already declared in the global scope; if not, declare it
 if (!window.viewMoreBtnss) {
     window.viewMoreBtnss = document.querySelectorAll('.view-more-btn');
 }
@@ -261,14 +248,12 @@ if (!window.isAscending) {
     window.isAscending = true;
 }
 
-            // Sort Direction Toggle
             sortDirectionBtn.addEventListener('click', function() {
                 isAscending = !isAscending;
                 this.querySelector('span').textContent = isAscending ? 'Ordre Croissant' : 'Ordre Décroissant';
                 applyFiltersAndSort();
             });
 
-            // Combined filter and sort function
             function applyFiltersAndSort() {
                 const filterValue = filterInput.value.toLowerCase();
                 const cardType = cardTypeFilter.value.toLowerCase();
@@ -305,12 +290,10 @@ if (!window.isAscending) {
                 }
             }
 
-            // Event listeners
             filterInput.addEventListener('input', applyFiltersAndSort);
             cardTypeFilter.addEventListener('change', applyFiltersAndSort);
             sortSelect.addEventListener('change', applyFiltersAndSort);
 
-            // Column index helper
             function getColumnIndex(sortValue) {
                 const indices = {
                     'nom': 1,
@@ -321,7 +304,6 @@ if (!window.isAscending) {
                 return indices[sortValue] || 1;
             }
 
-            // Modal functionality
             viewMoreBtnss.forEach(button => {
                 button.addEventListener('click', function() {
                     const membreId = this.getAttribute('data-membre-id');

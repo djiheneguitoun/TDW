@@ -10,7 +10,6 @@
     
 
     <div class="max-w-6xl mx-auto px-4 ">
-        <!-- Enhanced Header Section -->
         <div class="mb-12">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div class="bg-white/50 p-6 rounded-2xl custom-shadow hover-scale">
@@ -41,7 +40,6 @@
             </div>
         </div>
 
-        <!-- Enhanced Main Content -->
         <div class="bg-white/80 rounded-2xl custom-shadow overflow-hidden hover-scale backdrop-blur-lg">
             <div class="overflow-x-auto">
                 <table class="w-full">
@@ -104,7 +102,6 @@
         </div>
     </div>
 
-    <!-- Enhanced Modal with Glass Effect -->
     <div id="popupModal" class="fixed inset-0 flex items-center justify-center hidden z-50">
         <div class="absolute inset-0 bg-[#643869]/30 backdrop-blur-sm transition-opacity duration-300"></div>
         <div class="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl p-8 max-w-xl w-full mx-4 relative z-10 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
@@ -136,13 +133,11 @@
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             
-            // Animation
             setTimeout(() => {
                 modalContent.classList.remove('scale-95', 'opacity-0');
                 modalContent.classList.add('scale-100', 'opacity-100');
             }, 10);
 
-            // Set download link
             document.getElementById('downloadReceipt').onclick = function() {
                 const link = document.createElement('a');
                 link.href = imageUrl;

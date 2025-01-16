@@ -39,7 +39,6 @@
     <div id="partenaires-container">
         <?php foreach ($categoriesData as $category): ?>
             <div class="mb-16 mx-auto">
-                <!-- Category Title with modern styling -->
                 <div class="relative mb-10">
                     <h2 class="text-3xl font-bold mb-4 text-center relative">
                         <span class="relative inline-block">

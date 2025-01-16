@@ -77,7 +77,6 @@
         </div>
     </div>
 
-    <!-- Enhanced Modal -->
     <div id="receiptModal" class=" z-50 hidden fixed inset-0 bg-secondary/50 backdrop-blur-sm overflow-y-auto h-full w-full transition-all duration-300">
         <div class="relative top-20 mx-auto border w-4/5 shadow-2xl rounded-2xl bg-white transform transition-all duration-300">
             <div class="flex justify-between items-center mb-6">

@@ -71,7 +71,6 @@
             </button>
 
             <div id="membreDetails" class="space-y-8">
-                <!-- En-tête avec informations personnelles -->
                 <div class="border-b border-gray-200 pb-6">
                     <h2 class="text-2xl font-bold text-custom-purple mb-2">
                         <?php echo htmlspecialchars($membre['nom']); ?> <?php echo htmlspecialchars($membre['prenom']); ?>
@@ -98,11 +97,9 @@
                     </div>
                 </div>
 
-                <!-- Section des documents -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-semibold text-custom-purple">Documents du membre</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Photo de profil -->
                         <div class="space-y-3">
                             <div class="aspect-square rounded-xl overflow-hidden shadow-lg border-4 border-custom-orange">
                                 <img src="uploads/<?php echo htmlspecialchars($membre['photo']); ?>" alt="Photo de profil" class="w-full h-full object-cover">
@@ -110,7 +107,6 @@
                             <p class="text-center font-medium text-custom-purple">Photo de profil</p>
                         </div>
 
-                        <!-- Carte d'identité -->
                         <div class="space-y-3">
                             <div class="aspect-square rounded-xl overflow-hidden shadow-lg border-4 border-custom-purple">
                                 <img src="uploads/<?php echo htmlspecialchars($membre['piece_identite']); ?>" alt="Carte d'identité" class="w-full h-full object-cover">
@@ -118,7 +114,6 @@
                             <p class="text-center font-medium text-custom-purple">Carte d'identité</p>
                         </div>
 
-                        <!-- Reçu de paiement -->
                         <div class="space-y-3">
                             <div class="aspect-square rounded-xl overflow-hidden shadow-lg border-4 border-custom-orange">
                                 <img src="uploads/<?php echo htmlspecialchars($membre['recu_paiement']); ?>" alt="Reçu de paiement" class="w-full h-full object-cover">

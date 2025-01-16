@@ -24,7 +24,6 @@ class DemandeAideController {
             $type_aide = $_POST['type_aide'];
             $description = $_POST['description'];
 
-            // Télécharger et enregistrer le fichier ZIP
             $target_dir = "uploads/";
             $target_file = $target_dir . basename($_FILES["fichier"]["name"]);
             $uploadOk = 1;
@@ -45,7 +44,6 @@ class DemandeAideController {
                 }
             }
 
-            // Insérer les données dans la table DemandesAide
             if ($this->model->insertDemandeAide($nom, $prenom, $date_naissance, $type_aide, $description, $target_file)) {
                 $_SESSION['success_message'] = "Demande d'aide soumise avec succès.";
                 header('Location: /elmuntada/show-demande-aide');

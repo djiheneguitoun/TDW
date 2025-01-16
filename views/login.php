@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Original styles remain */
         .custom-shape {
             clip-path: path('M 0 0 L 100% 0 L 100% 100% L 0 100% L 0 0 Z');
         }
@@ -52,7 +51,6 @@
 <body class="h-screen w-screen overflow-hidden bg-[#EAEAEA]">
     <div class="relative h-full w-full grid grid-cols-2">
         <div class="absolute purple-bg w-1/2 h-full z-20 overflow-hidden">
-            <!-- Decorative background elements -->
             <div class="absolute top-0 left-0 w-full h-full">
                 <div class="absolute top-10 left-10 w-20 h-20 rounded-full bg-white/5"></div>
                 <div class="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-white/5"></div>
@@ -60,7 +58,6 @@
             </div>
 
             <div class="container mx-auto p-4 relative">
-                <!-- Enhanced title section -->
                 <div class="text-center mb-12 floating">
                     <h1 class="text-white text-6xl font-bold tracking-wider mb-4">
                         Connexion
@@ -72,13 +69,11 @@
                     </div>
                 </div>
 
-                <!-- Enhanced form -->
                 <form action="/elmuntada/login-handle" method="POST" 
                     class="max-w-lg mx-auto form-background rounded-3xl p-12 
                     shadow-[0_8px_32px_rgba(0,0,0,0.2)] border border-white/20 
                     glassmorphism relative overflow-hidden">
                     
-                    <!-- Email field -->
                     <div class="mb-8 relative group">
                         <label for="email" 
                             class="block text-white/90 text-sm font-medium mb-3 tracking-wider 
@@ -103,7 +98,6 @@
                         </div>
                     </div>
 
-                    <!-- Password field -->
                     <div class="mb-10 relative group">
                         <label for="password" 
                             class="block text-white/90 text-sm font-medium mb-3 tracking-wider 
@@ -127,7 +121,6 @@
                         </div>
                     </div>
 
-                    <!-- Remember me and Forgot password -->
                     <div class="flex items-center justify-between mb-8 text-sm">
                         <label class="flex items-center text-white/70 hover:text-white 
                             cursor-pointer transition-colors duration-300">
@@ -137,7 +130,6 @@
                       
                     </div>
 
-                    <!-- Submit button -->
                     <div class="space-y-6">
                         <button type="submit"
                             class="w-full button-gradient text-[#693B69] font-bold py-4 px-6 rounded-2xl
@@ -157,7 +149,6 @@
             </div>
         </div>
 
-        <!-- Rest of the layout remains unchanged -->
         <div class="">
             <div class="absolute right-0 top-0 h-full w-1/2 bg-[#693B69] curve-shape" style="transform: rotate(-40deg) translateX(45%);"></div>
             <div class="absolute right-0 top-0 h-full w-1/2 bg-[#EADFDB] curve-shape" style="transform: rotate(-40deg) translateX(65%);"></div>

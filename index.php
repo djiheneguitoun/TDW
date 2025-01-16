@@ -8,16 +8,16 @@ require_once 'controllers/CatalogueController.php';
 require_once 'controllers/InscriptionController.php';
 require_once 'controllers/LoginController.php';
 require_once 'controllers/LogoutController.php';
-require_once 'controllers/MembreController.php'; // Add this line
-require_once 'controllers/CarteController.php';  // Add this line
-require_once 'controllers/DonController.php';    // Add this line
-require_once 'controllers/AbonnementController.php';    // Add this line
-require_once 'controllers\AvantagesController.php';    // Add this line
-require_once 'controllers/EvenementController.php';    // Add this line
-require_once 'controllers/DemandeAideController.php';    // Add this line
-require_once 'controllers/QrCodeController.php';    // Add this line
-require_once 'controllers/PartenaireController.php';    // Add this line
-require_once 'controllers/StatistiquesController.php';    // Add this line
+require_once 'controllers/MembreController.php'; 
+require_once 'controllers/CarteController.php'; 
+require_once 'controllers/DonController.php';    
+require_once 'controllers/AbonnementController.php';    
+require_once 'controllers\AvantagesController.php';  
+require_once 'controllers/EvenementController.php';    
+require_once 'controllers/DemandeAideController.php';   
+require_once 'controllers/QrCodeController.php';   
+require_once 'controllers/PartenaireController.php';    
+require_once 'controllers/StatistiquesController.php';   
 
 
 $request = $_SERVER['REQUEST_URI'];

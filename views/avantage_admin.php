@@ -92,7 +92,6 @@
         </div>
     </div>
 
-    <!-- Modal -->
     <div id="editRemisePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md transform transition-all">
             <div class="p-6">

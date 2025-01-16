@@ -11,7 +11,6 @@
    
 
     <div class="container mx-auto px-4 max-w-7xl">
-        <!-- Enhanced Header -->
         <div class="mb-12 text-center relative">
             <div class="inline-block">
                 <div class="bg-white/50 p-8 rounded-2xl custom-shadow hover-scale backdrop-blur-xl">
@@ -25,7 +24,6 @@
             </div>
         </div>
 
-        <!-- Enhanced Table Section -->
         <div class="bg-white/80 rounded-2xl overflow-hidden custom-shadow hover-scale backdrop-blur-xl">
             <div class="overflow-x-auto">
                 <table class="w-full">

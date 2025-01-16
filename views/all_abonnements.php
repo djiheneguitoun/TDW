@@ -8,7 +8,6 @@
                 </h1>
                 <div class="h-1 w-32 bg-[#FF7C50] mx-auto rounded-full"></div>
             </div>
-        <!-- Table Container -->
         <div class="rounded-lg shadow-lg overflow-hidden bg-white">
             <div class="overflow-x-auto">
                 <table class="w-full">
@@ -54,7 +53,6 @@
             </div>
         </div>
 
-        <!-- Modal -->
         <div id="myModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4"
              style="background-color: rgba(0, 0, 0, 0.5);">
             <div class="bg-white rounded-lg shadow-xl w-full max-w-4xl">
@@ -100,7 +98,6 @@
             }
         }
 
-        // Add hover effect to buttons
         document.querySelectorAll('button').forEach(button => {
             if (button.style.backgroundColor === '#FF7C50') {
                 button.addEventListener('mouseenter', function() {
@@ -112,7 +109,6 @@
             }
         });
 
-        // Add hover effect to table rows
         document.querySelectorAll('tbody tr').forEach(row => {
             row.addEventListener('mouseenter', function() {
                 this.style.backgroundColor = '#f9fafb';

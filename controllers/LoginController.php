@@ -11,7 +11,7 @@ class LoginController {
         $database = new Database();
         $db = $database->getConnection();
         $this->utilisateur = new Utilisateur($db);
-        $this->membre = new Membre($db); // Instantiate the Membre model
+        $this->membre = new Membre($db); 
     }
 
     public function handleLogin() {
@@ -22,7 +22,6 @@ class LoginController {
             $user = $this->utilisateur->getUserByEmail($email);
 
             if ($user && password_verify($password, $user['mot_de_passe'])) {
-                // Start the session
                 session_start();
                 $_SESSION['utilisateur_id'] = $user['utilisateur_id'];
                 $_SESSION['role'] = $this->getUserRole($user['utilisateur_id']);

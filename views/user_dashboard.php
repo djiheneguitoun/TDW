@@ -34,22 +34,12 @@
 
         <div class="nav-container px-4 py-2">
             <ul class="space-y-2">
-                <li>
-                    <div data-path="/elmuntada/user-dashboard/update"
-                         class="menu-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
-                        <div class="icon-container p-2.5 rounded-lg bg-white/10">
-                            <svg class="w-5 h-5 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                        </div>
-                        <span class="text-white/90 text-sm font-medium">Modifier profil</span>
-                    </div>
-                </li>
+               
 
                 <li>
                     <div data-path="/elmuntada/membership-application"
                          class="menu-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
-                        <div class="icon-container p-2.5 rounded-lg bg-white/10">
+                        <div class="icon-container p-1.5 rounded-lg bg-white/10">
                             <svg class="w-5 h-5 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -57,6 +47,29 @@
                         <span class="text-white/90 text-sm font-medium">Devenir Membre</span>
                     </div>
                 </li>
+                <li>
+                    <div data-path="/elmuntada/make-donation" 
+                         class="menu-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
+                        <div class="icon-container p-1.5 rounded-lg bg-white/10">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <span class="text-white text-sm font-medium">Faire un don</span>
+                    </div>
+                </li>
+              <li>
+    <div data-path="/elmuntada/show-demande-aide" 
+         class="menu-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
+        <div class="icon-container p-1.5 rounded-lg bg-white/10">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                      d="M12 21c-4.97-4.32-8-7.15-8-10.4 0-2.5 2-4.6 4.6-4.6 1.56 0 3.04.81 3.8 2.1.76-1.29 2.24-2.1 3.8-2.1 2.6 0 4.6 2.1 4.6 4.6 0 3.25-3.03 6.08-8 10.4z" />
+            </svg>
+        </div>
+        <span class="text-white text-sm font-medium">Demande d'aides</span>
+    </div>
+</li>
 
                 <li>
                     <div
@@ -69,6 +82,7 @@
                         <a href="/elmuntada/logout" class="text-white text-sm font-medium group-hover:text-white">Déconnexion</a>
                         </div>
                 </li>
+                
             </ul>
         </div>
     </div>
@@ -79,17 +93,16 @@
         </div>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
         const menuItems = document.querySelectorAll('.menu-item');
 
-        // Initialize Feather icons on page load
-
+        
         const currentPath = window.location.pathname;
         menuItems.forEach(item => {
             if(item.getAttribute('data-path') === currentPath) {
                 item.classList.add('active-menu-item');
             }
-
+            
             item.addEventListener('click', function() {
                 menuItems.forEach(i => i.classList.remove('active-menu-item'));
                 this.classList.add('active-menu-item');
@@ -98,17 +111,43 @@
             });
         });
 
+
+    if (currentPath === '/elmuntada/user-dashboard') {
+        loadContent('/elmuntada/membership-application');
+    }
+
         function loadContent(path) {
-            fetch(path)
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('.content').innerHTML = data;
-                    // Reinitialize Feather icons after loading new content
-                    feather.replace();
-                })
-                .catch(error => console.error('Error loading content:', error));
-        }
+    fetch(path)
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.content').innerHTML = data;
+
+            const scripts = document.querySelector('.content').querySelectorAll('script');
+            scripts.forEach(script => {
+                const newScript = document.createElement('script');
+                if (script.src) {
+                    console.log("hello")
+                    newScript.src = script.src;
+                } else {
+                    console.log("hello2")
+
+                    newScript.textContent = script.textContent;
+                    console.log(script.textContent)
+
+                }
+                console.log("hello3")
+
+                document.body.appendChild(newScript).remove();
+            });
+
+            feather.replace();
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
     });
+
+
+    
 </script>
 </body>
 </html>

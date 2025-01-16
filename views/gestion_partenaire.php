@@ -87,7 +87,6 @@
         </div>
     </div>
 
-    <!-- Modal for editing partner -->
     <div id="editPartenairePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl mx-4 transform transition-all">
             <div class="px-6 py-4 bg-[#643869] text-white flex items-center justify-between rounded-t-2xl">

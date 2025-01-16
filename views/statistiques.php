@@ -25,15 +25,12 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <div class="container mx-auto px-4 py-12">
-        <!-- Header with enhanced styling -->
         <header class="mb-16 text-center animate-fade-in">
             <h1 class="text-4xl font-bold text-[#643869] mb-4">Statistiques sur les dons et bénévolat</h1>
             <div class="w-32 h-1.5 bg-[#FF7C50] mx-auto rounded-full"></div>
         </header>
 
-        <!-- Statistics Cards with enhanced design -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <!-- Total Donations Card -->
             <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in">
                 <div class="flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[#FF7C50]/10 flex items-center justify-center mb-4">
@@ -54,7 +51,6 @@
                 </div>
             </div>
 
-            <!-- Number of Donors -->
             <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in" style="animation-delay: 100ms;">
                 <div class="flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[#643869]/10 flex items-center justify-center mb-4">
@@ -69,7 +65,6 @@
                 </div>
             </div>
 
-            <!-- Total Volunteers -->
             <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in" style="animation-delay: 200ms;">
                 <div class="flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[#FF7C50]/10 flex items-center justify-center mb-4">
@@ -84,7 +79,6 @@
                 </div>
             </div>
 
-            <!-- Average Donation -->
             <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in" style="animation-delay: 300ms;">
                 <div class="flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[#643869]/10 flex items-center justify-center mb-4">

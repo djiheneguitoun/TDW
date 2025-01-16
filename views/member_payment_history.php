@@ -70,7 +70,6 @@
 
     <script>
 console.log("helllllllllllllllllllll")
-        // Modal functionality
         const modal = document.getElementById("myModal");
         const closeBtn = document.querySelector(".close");
 
@@ -99,7 +98,6 @@ console.log("helllllllllllllllllllll")
             }
         }
 
-        // Add hover effect to buttons
         const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
             if (button.style.backgroundColor === '#FF7C50') {
@@ -112,7 +110,6 @@ console.log("helllllllllllllllllllll")
             }
         });
 
-        // Add hover effect to table rows
         const tableRows = document.querySelectorAll('tbody tr');
         tableRows.forEach(row => {
             row.addEventListener('mouseenter', function() {

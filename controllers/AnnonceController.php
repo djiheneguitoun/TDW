@@ -20,7 +20,7 @@ class AnnonceController {
         include 'views/all_annonces.php';
     }
 
-    public function createAnnonce() {
+     public function createAnnonce() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $titre = $_POST['titre'];
             $description = $_POST['description'];

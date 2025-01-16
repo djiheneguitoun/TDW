@@ -8,7 +8,6 @@
 </head>
 <body class="bg-[#fafafa] min-h-screen py-12">
     <div class="container mx-auto px-4 max-w-7xl">
-        <!-- Enhanced Header -->
         <div class="mb-12 text-center relative">
             <div class="inline-block">
                 <div class="bg-white/50 p-8 rounded-2xl custom-shadow hover-scale backdrop-blur-xl">
@@ -22,12 +21,10 @@
             </div>
         </div>
 
-        <!-- Add Button -->
         <div class="mb-4">
             <button id="openModal" class="bg-[#643869] text-white px-4 py-2 rounded-md hover:bg-[#5a3260]">Ajouter un avantage</button>
         </div>
 
-        <!-- Enhanced Table Section -->
         <div class="bg-white/80 rounded-2xl overflow-hidden custom-shadow hover-scale backdrop-blur-xl">
             <div class="overflow-x-auto">
                 <table class="w-full">
@@ -104,10 +101,8 @@
         </div>
     </div>
 
-    <!-- Modal -->
 <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
     <div class="bg-white p-8 rounded-2xl w-full max-w-2xl mx-4 shadow-2xl transform transition-all">
-        <!-- Modal Header -->
         <div class="border-b pb-4 mb-6">
             <h2 class="text-2xl font-bold text-[#643869] flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,9 +113,7 @@
         </div>
 
         <form action="/elmuntada/addRemise" method="POST" class="space-y-6">
-            <!-- Two Column Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Left Column -->
                 <div class="space-y-6">
                     <div>
                         <label for="nom_avantage" class="block text-xs font-medium text-gray-700 mb-1">Nom de l'avantage</label>
@@ -159,7 +152,6 @@
                     </div>
                 </div>
 
-                <!-- Right Column -->
                 <div class="space-y-6">
                     <div>
                         <label for="conditions" class="block text-xs font-medium text-gray-700 mb-1">Conditions</label>
@@ -192,7 +184,6 @@
                 </div>
             </div>
 
-            <!-- Footer -->
             <div class="flex justify-end gap-3 pt-6 border-t">
                 <button type="button" id="closeModal" 
                     class="px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-300">
@@ -211,7 +202,6 @@
 </div>
 
 <style>
-    /* Add smooth transitions for modal */
     #modal {
         transition: opacity 0.3s ease-in-out;
     }
@@ -225,7 +215,6 @@
         opacity: 1;
     }
     
-    /* Custom scrollbar for description */
     textarea {
         scrollbar-width: thin;
         scrollbar-color: #643869 #f3f4f6;

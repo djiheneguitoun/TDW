@@ -42,7 +42,7 @@ class HomeController {
         }
 
 
-        include 'views/home.html';
+        include 'views/home.php';
     }
 
  
