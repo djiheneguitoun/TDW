@@ -20,4 +20,5 @@ class Annonce {
         $stmt->execute();
         return $stmt;
     }
+    
 }

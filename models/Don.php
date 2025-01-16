@@ -31,4 +31,17 @@ class Don {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getAllDons() {
+        $query = "SELECT * FROM " . $this->table_name;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function validateDon($don_id) {
+        $query = "UPDATE " . $this->table_name . " SET valide = 'approuve' WHERE don_id = :don_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':don_id', $don_id);
+        return $stmt->execute();
+    }
 }

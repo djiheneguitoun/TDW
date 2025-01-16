@@ -28,8 +28,8 @@
     </script>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen font-['Poppins']">
-    <div class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
+    <div class="py-20 ">
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-custom-purple mb-4 animate-fade-in">Membres Validés</h1>
                 <div class="h-1 w-32 bg-custom-orange mx-auto rounded-full"></div>
@@ -51,7 +51,7 @@
 
                     <!-- Card Type Filter -->
                     <div>
-                        <select id="cardTypeFilter" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent appearance-none bg-white transition-all duration-200">
+                        <select id="cardTypeFilter" class=" text-sm w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent appearance-none bg-white transition-all duration-200">
                             <option value="">Type de Carte</option>
                             <option value="jeune">Jeune</option>
                             <option value="classique">Classique</option>
@@ -61,7 +61,7 @@
 
                     <!-- Sort Options -->
                     <div>
-                        <select id="sortSelect" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent appearance-none bg-white transition-all duration-200">
+                        <select id="sortSelect" class=" text-sm w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-transparent appearance-none bg-white transition-all duration-200">
                             <option value="">Trier par</option>
                             <option value="nom">Nom</option>
                             <option value="prenom">Prénom</option>
@@ -72,7 +72,7 @@
 
                     <!-- Sort Direction -->
                     <div>
-                        <button id="sortDirection" class="w-full px-4 py-3 bg-custom-purple text-white rounded-xl hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center gap-2">
+                        <button id="sortDirection" class=" text-sm w-full px-4 py-3 bg-custom-purple text-white rounded-xl hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center gap-2">
                             <span>Ordre Croissant</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -87,26 +87,26 @@
                 <table class="min-w-full">
                     <thead class="bg-custom-purple text-white">
                         <tr>
-                            <th class="py-4 px-6 text-left font-semibold rounded-tl-xl">Nom</th>
-                            <th class="py-4 px-6 text-left font-semibold">Prénom</th>
-                            <th class="py-4 px-6 text-left font-semibold">Email</th>
-                            <th class="py-4 px-6 text-left font-semibold">Téléphone</th>
-                            <th class="py-4 px-6 text-left font-semibold">Adresse</th>
-                            <th class="py-4 px-6 text-left font-semibold">Type de Carte</th>
-                            <th class="py-4 px-6 text-left font-semibold">Date de création</th>
-                            <th class="py-4 px-6 text-left font-semibold">Code QR</th>
-                            <th class="py-4 px-6 text-left font-semibold rounded-tr-xl">Actions</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold rounded-tl-xl">Nom</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Prénom</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Email</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Téléphone</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Adresse</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Type de Carte</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Date de création</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold">Code QR</th>
+                            <th class="py-4 px-6 text-sm text-left font-semibold rounded-tr-xl">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="membresTableBody" class="divide-y divide-gray-100">
                         <?php foreach ($membres as $membre) : ?>
                         <tr class="hover:bg-gray-50 transition-all duration-200">
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['nom']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['prenom']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['email']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['telephone']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['adresse']); ?></td>
-                            <td class="py-4 px-6">
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['nom']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['prenom']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['email']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['telephone']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['adresse']); ?></td>
+                            <td class="text-sm py-4 px-6">
     <?php 
         $cardClass = 'bg-gray-100 text-gray-800'; // default style
         
@@ -122,18 +122,18 @@
         <?php echo htmlspecialchars($membre['type_carte_nom']); ?>
     </span>
 </td>
-                            <td class="py-4 px-6">
+                            <td class="text-sm py-4 px-6">
                                 <?php
                                     $date = new DateTime($membre['date_inscription']);
                                     echo $date->format('d/m/Y');
                                 ?>
                             </td>
-                            <td class="py-4 px-6">
+                            <td class="text-sm py-4 px-6">
                                 <div class="p-1 bg-white rounded-lg shadow-sm inline-block hover:shadow-md transition-shadow duration-200">
                                     <img src="uploads/<?php echo $membre['code_qr']; ?>" alt="QR Code" class="h-16 w-16 object-contain rounded-lg">
                                 </div>
                             </td>
-                            <td class="py-4 px-6">
+                            <td class="text-sm py-4 px-6">
                                 <button class="bg-custom-purple hover:bg-opacity-90 text-white py-2 px-4 rounded-xl transition-all duration-200 transform hover:scale-105 view-more-btn" 
                                         data-membre-id="<?php echo htmlspecialchars($membre['membre_id']); ?>">
                                     <span class="flex items-center gap-2">
@@ -156,7 +156,7 @@
     <!-- Modal remains the same -->
     <div id="membrePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-4 relative transform transition-all duration-300">
-            <button id="closePopup" class="absolute top-4 right-4 text-gray-500 hover:text-custom-purple transition-colors">
+            <button id="closePiiiiw" class="absolute top-4 right-4 text-gray-500 hover:text-custom-purple transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -224,16 +224,42 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewMoreBtns = document.querySelectorAll('.view-more-btn');
-            const membrePopup = document.getElementById('membrePopup');
-            const closePopupBtn = document.getElementById('closePopup');
-            const filterInput = document.getElementById('filterInput');
-            const cardTypeFilter = document.getElementById('cardTypeFilter');
-            const sortSelect = document.getElementById('sortSelect');
-            const sortDirectionBtn = document.getElementById('sortDirection');
-            const membresTableBody = document.getElementById('membresTableBody');
-            let isAscending = true;
+           // Check if each variable is already declared in the global scope; if not, declare it
+if (!window.viewMoreBtnss) {
+    window.viewMoreBtnss = document.querySelectorAll('.view-more-btn');
+}
+
+if (!window.membrePopup) {
+    window.membrePopup = document.getElementById('membrePopup');
+}
+
+if (!window.closePopup) {
+    window.closePopup = document.getElementById('closePiiiiw');
+}
+
+if (!window.filterInput) {
+    window.filterInput = document.getElementById('filterInput');
+}
+
+if (!window.cardTypeFilter) {
+    window.cardTypeFilter = document.getElementById('cardTypeFilter');
+}
+
+if (!window.sortSelect) {
+    window.sortSelect = document.getElementById('sortSelect');
+}
+
+if (!window.sortDirectionBtn) {
+    window.sortDirectionBtn = document.getElementById('sortDirection');
+}
+
+if (!window.membresTableBody) {
+    window.membresTableBody = document.getElementById('membresTableBody');
+}
+
+if (!window.isAscending) {
+    window.isAscending = true;
+}
 
             // Sort Direction Toggle
             sortDirectionBtn.addEventListener('click', function() {
@@ -296,7 +322,7 @@
             }
 
             // Modal functionality
-            viewMoreBtns.forEach(button => {
+            viewMoreBtnss.forEach(button => {
                 button.addEventListener('click', function() {
                     const membreId = this.getAttribute('data-membre-id');
                     fetch(`/elmuntada/membre-details?id=${membreId}`)
@@ -309,7 +335,7 @@
                 });
             });
 
-            closePopupBtn.addEventListener('click', closeModal);
+            closePopup.addEventListener('click', closeModal);
             membrePopup.addEventListener('click', function(event) {
                 if (event.target === membrePopup) closeModal();
             });
@@ -318,7 +344,6 @@
                 membrePopup.classList.add('hidden');
                 membrePopup.classList.remove('flex');
             }
-        });
     </script>
 </body>
 </html>

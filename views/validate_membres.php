@@ -21,33 +21,36 @@
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
     <div class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
-            <h1 class="text-4xl font-bold mb-8 text-center text-custom-purple">Membres à Valider</h1>
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-[#643869] mb-4 animate-fade-in">Membres à Valider</h1>
+                <div class="h-1 w-32 bg-[#FF7C50] mx-auto rounded-full"></div>
+            </div>
             <div class="bg-white rounded-xl shadow-xl overflow-hidden">
                 <table class="min-w-full">
                     <thead class="bg-custom-purple text-white">
                         <tr>
-                            <th class="py-4 px-6 text-left font-semibold">Nom</th>
-                            <th class="py-4 px-6 text-left font-semibold">Prénom</th>
-                            <th class="py-4 px-6 text-left font-semibold">Email</th>
-                            <th class="py-4 px-6 text-left font-semibold">Téléphone</th>
-                            <th class="py-4 px-6 text-left font-semibold">Adresse</th>
-                            <th class="py-4 px-6 text-left font-semibold">Actions</th>
+                            <th class="text-sm py-4 px-6 text-left font-semibold">Nom</th>
+                            <th class="text-sm py-4 px-6 text-left font-semibold">Prénom</th>
+                            <th class="text-sm py-4 px-6 text-left font-semibold">Email</th>
+                            <th class="text-sm py-4 px-6 text-left font-semibold">Téléphone</th>
+                            <th class="text-sm py-4 px-6 text-left font-semibold">Adresse</th>
+                            <th class="text-sm py-4 px-6 text-left font-semibold">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
                         <?php foreach ($membres as $membre) : ?>
                         <tr class="hover:bg-gray-50 transition-colors duration-200">
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['nom']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['prenom']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['email']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['telephone']); ?></td>
-                            <td class="py-4 px-6"><?php echo htmlspecialchars($membre['adresse']); ?></td>
-                            <td class="py-4 px-6 space-x-2">
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['nom']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['prenom']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['email']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['telephone']); ?></td>
+                            <td class="text-sm py-4 px-6"><?php echo htmlspecialchars($membre['adresse']); ?></td>
+                            <td class="text-sm py-4 px-6 space-x-2">
                                 <form action="/elmuntada/validate-membre" method="POST" class="inline">
                                     <input type="hidden" name="membre_id" value="<?php echo htmlspecialchars($membre['membre_id']); ?>">
                                     <button type="submit" class="bg-custom-orange hover:bg-opacity-90 text-white py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105">Valider</button>
                                 </form>
-                                <button class="bg-custom-purple hover:bg-opacity-90 text-white py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 view-more-btn ml-2" data-membre-id="<?php echo htmlspecialchars($membre['membre_id']); ?>">
+                                <button class="bg-custom-purple hover:bg-opacity-90 text-white py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 view-more ml-2" data-membre-id="<?php echo htmlspecialchars($membre['membre_id']); ?>">
                                     Voir plus
                                 </button>
                             </td>
@@ -59,7 +62,7 @@
         </div>
     </div>
 
-    <div id="membrePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center backdrop-blur-sm">
+    <div id="membrePop" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-4 relative transform transition-all duration-300">
             <button id="closePopup" class="absolute top-4 right-4 text-gray-500 hover:text-custom-purple transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,34 +132,31 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewMoreBtns = document.querySelectorAll('.view-more-btn');
-            const membrePopup = document.getElementById('membrePopup');
-            const closePopupBtn = document.getElementById('closePopup');
+    
 
-            viewMoreBtns.forEach(button => {
+
+            document.querySelectorAll('.view-more').forEach(button => {
                 button.addEventListener('click', function() {
                     const membreId = this.getAttribute('data-membre-id');
                     fetch(`/elmuntada/membre-details?id=${membreId}`)
                         .then(response => response.text())
                         .then(data => {
-                            membrePopup.classList.remove('hidden');
-                            membrePopup.classList.add('flex');
+                            document.getElementById('membrePop').classList.remove('hidden');
+                            document.getElementById('membrePop').classList.add('flex');
                         })
                         .catch(error => console.error('Error:', error));
                 });
             });
 
-            closePopupBtn.addEventListener('click', closeModal);
-            membrePopup.addEventListener('click', function(event) {
-                if (event.target === membrePopup) closeModal();
+            document.getElementById('closePopup').addEventListener('click', closeModal);
+            document.getElementById('membrePop').addEventListener('click', function(event) {
+                if (event.target === document.getElementById('membrePop')) closeModal();
             });
 
             function closeModal() {
-                membrePopup.classList.add('hidden');
-                membrePopup.classList.remove('flex');
+                document.getElementById('membrePop').classList.add('hidden');
+                document.getElementById('membrePop').classList.remove('flex');
             }
-        });
     </script>
 </body>
 </html>

@@ -31,4 +31,9 @@ class EvenementController {
             exit();
         }
     }
+
+    public function listBenevolats() {
+        $benevolats = $this->evenement->getBenevolatsWithDetails();
+        include 'views/list_benevolats.php';
+    }
 }

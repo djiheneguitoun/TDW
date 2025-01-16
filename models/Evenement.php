@@ -60,4 +60,32 @@ class Evenement {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC)['is_registered'] > 0;
     }
+    public function getBenevolatsWithDetails() {
+        $query = "
+            SELECT
+                b.benevolat_id,
+                b.membre_id,
+                b.evenement_id,
+                b.description,
+                b.date_inscription,
+                u.nom AS membre_nom,
+                u.prenom AS membre_prenom,
+                e.titre AS evenement_titre,
+                e.description AS evenement_description,
+                e.date_debut,
+                e.date_fin,
+                e.lieu
+            FROM
+                Benevolats b
+            JOIN
+                Membres m ON b.membre_id = m.membre_id
+            JOIN
+                Utilisateurs u ON m.utilisateur_id = u.utilisateur_id
+            JOIN
+                Evenements e ON b.evenement_id = e.evenement_id
+        ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

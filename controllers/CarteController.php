@@ -68,7 +68,7 @@ class CarteController {
     
             if ($action === 'validate') {
                 $this->abonnement->validateAbonnement($abonnement_id);
-                header('Location: /elmuntada/membre-dashboard');
+                header('Location: /elmuntada/admin-dashboard');
             } elseif ($action === 'show_receipt') {
                 $receipt_path = $this->abonnement->getReceiptPath($abonnement_id);
                 if ($receipt_path) {

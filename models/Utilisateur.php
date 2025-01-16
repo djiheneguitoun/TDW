@@ -59,5 +59,12 @@ class Utilisateur {
         $stmt->bindParam(5, $utilisateur_id);
         return $stmt->execute();
     }
+    public function createUtilisateur($nom, $prenom, $email, $mot_de_passe) {
+        echo "createUtilisateur";
+        $query = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, date_creation) VALUES (?, ?, ?, ?, CURDATE())";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$nom, $prenom, $email, $mot_de_passe]);
+        return $this->conn->lastInsertId();
+    }
     
 }

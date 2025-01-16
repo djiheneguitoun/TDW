@@ -86,7 +86,7 @@ class MembreController {
             $this->membre->validateMembre($membre_id);
             $this->carte->updateCarte($carte['carte_id'], $type_carte_id);
 
-            header('Location: /elmuntada/validate-membres');
+            header('Location: /elmuntada/admin-dashboard');
         }
     }
     public function showMembreDetails($membre_id) {

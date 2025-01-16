@@ -16,6 +16,9 @@ require_once 'controllers\AvantagesController.php';    // Add this line
 require_once 'controllers/EvenementController.php';    // Add this line
 require_once 'controllers/DemandeAideController.php';    // Add this line
 require_once 'controllers/QrCodeController.php';    // Add this line
+require_once 'controllers/PartenaireController.php';    // Add this line
+require_once 'controllers/StatistiquesController.php';    // Add this line
+
 
 $request = $_SERVER['REQUEST_URI'];
 $request = strtok($request, '?');
@@ -99,14 +102,6 @@ switch ($request) {
         $controller->handleLogout();
         break;
 
-    case '/membre-dashboard/function1':
-        $controller = new MembreController();
-        $controller->showUpdateForm();
-        break;
-
-    case '/membre-dashboard/function2':
-        include 'views/membre_function2.php';
-        break;
 
     case '/validate-membres':
         $controller = new MembreController();
@@ -123,9 +118,6 @@ switch ($request) {
         $controller->showMembreDetails($_GET['id']);
         break;
 
-    case '/membre-dashboard/function3':
-        include 'views/membre_function3.php';
-        break;
 
     case '/membre-dashboard/update':
         $controller = new MembreController();
@@ -222,6 +214,73 @@ case '/scan-qr-code':
 case '/get-membre-info':
         $controller = new QrCodeController();
         $controller->getMembreInfo();
+        break;
+case '/partenaire-info':
+        $controller = new PartenaireController();
+        $controller->showPartenaireInfo();
+        break;
+case '/partenaire-admin':
+        $controller = new PartenaireController();
+        $controller->showPartenaires();
+        break;
+case '/addPartenaire':
+        $controller = new PartenaireController();
+        $controller->addPartenaire();
+        break;
+        case '/getPartenaire':
+            $controller = new PartenaireController();
+            $controller->getPartenaire();
+            break;
+    
+        case '/updatePartenaire':
+            $controller = new PartenaireController();
+            $controller->updatePartenaire();
+            break;
+    
+        case '/deletePartenaire':
+            $controller = new PartenaireController();
+            $controller->deletePartenaire();
+      case '/partenaire-gestion':
+        $controller = new PartenaireController();
+        $controller->showPartenaires2();
+        break;      break;
+        case '/updateRemise':
+            $controller = new AvantagesController();
+            $controller->updateRemise();
+            break;
+ case '/avantage_admin':
+            $controller = new AvantagesController();
+            $controller->showAllAvantages();
+            break;
+ case '/all_remise':
+            $controller = new AvantagesController();
+            $controller->showSpecialRemisesForAllMembers();
+            break;
+case '/addRemise':
+    $controller = new AvantagesController();
+    $controller->addRemise();
+    break;
+ case '/view-all-dons':
+        $controller = new DonController();
+        $controller->viewAllDons();
+        break;
+
+    case '/validate-don':
+        $controller = new DonController();
+        $controller->validateDon($_GET['don_id']);
+        break;
+
+    case '/stat':
+        $controller = new StatistiquesController();
+        $controller->index();
+        break;
+         case '/list_benevolats':
+            $controller = new EvenementController();
+            $controller->listBenevolats();
+        break;
+   case '/all_annonces_membre':
+    $controller = new AnnonceController();
+    $controller->showAll2();
         break;
     default:
         http_response_code(404);

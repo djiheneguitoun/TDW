@@ -75,5 +75,18 @@ class DonController {
         $dons = $this->don->getDonsByMembre($utilisateur_id);
         include 'views/view_dons_by_membre.php';
     }
+    public function viewAllDons() {
+        $dons = $this->don->getAllDons();
+        include 'views/view_all_dons.php';
+    }
 
+    public function validateDon($don_id) {
+        if ($this->don->validateDon($don_id)) {
+            $_SESSION['success_message'] = "Don validé avec succès!";
+        } else {
+            $_SESSION['error_message'] = "Erreur lors de la validation du don.";
+        }
+        header('Location: /elmuntada/admin-dashboard');
+        exit();
+    }
 }

@@ -19,4 +19,26 @@ class AnnonceController {
         }
         include 'views/all_annonces.php';
     }
+
+    public function createAnnonce() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $titre = $_POST['titre'];
+            $description = $_POST['description'];
+            $type_annonce = $_POST['type_annonce'];
+            $image = $_POST['image'];
+            $date_publication = $_POST['date_publication'];
+            $date_expiration = $_POST['date_expiration'];
+            $priorite = $_POST['priorite'];
+            $statut = $_POST['statut'];
+
+            $result = $this->annonce->createAnnonce($titre, $description, $type_annonce, $image, $date_publication, $date_expiration, $priorite, $statut);
+            if ($result) {
+                $_SESSION['success_message'] = "Annonce créée avec succès!";
+            } else {
+                $_SESSION['error_message'] = "Échec de la création de l'annonce.";
+            }
+            header('Location: /elmuntada/annonces');
+            exit();
+        }
+    }
 }

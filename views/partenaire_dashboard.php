@@ -53,7 +53,7 @@ if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] !== 'partenaire') {
 </li>
 
 <li>
-    <div data-path="/elmuntada/scan-qr-code" 
+    <div data-path="/elmuntada/partenaire-info" 
          class="menu-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
         <div class="icon-container p-1.5 rounded-lg bg-white/10">
             <svg class="w-5 h-5 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">

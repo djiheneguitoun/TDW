@@ -160,7 +160,6 @@
 <script>
   const filteredAvantagesData = <?php echo json_encode($filteredAvantagesData); ?>;
 
-console.log(filteredAvantagesData); // Debugging statement to check the data structure
 
 function renderTable(data) {
     const tableBody = document.getElementById('avantagesTableBody');
