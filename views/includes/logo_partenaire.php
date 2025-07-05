@@ -1,5 +1,5 @@
 
-<div class="container p-4 pt-10" id="partenaires-section ">
+<div class="container p-4 pt-10" id="partenaires-section">
   <div class="text-[#643869] text-center text-3xl font-bold py-6">
     <a href="elmuntada/catalogue">Nos Partenaires</a>
   </div>

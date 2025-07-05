@@ -36,17 +36,20 @@
         </div>
 
         <div class="flex items-center gap-8">
-          <a href="#hero" class="font-medium hover:text-[#FF7C50] transition-colors"
+          <a href="/elmuntada/home#hero" class="font-medium hover:text-[#FF7C50] transition-colors"
             >À propos</a
           >
-          <a href="#annonces" class="font-medium hover:text-[#FF7C50] transition-colors"
+          <a href="/elmuntada/home#annonces" class="font-medium hover:text-[#FF7C50] transition-colors"
             >Annonces</a
           >
-          <a href="#avantages-section" class="font-medium hover:text-[#FF7C50] transition-colors"
+          <a href="/elmuntada/home#avantages-section" class="font-medium hover:text-[#FF7C50] transition-colors"
             >Avantages</a
           >
-          <a href="#partenaires-section " class="font-medium hover:text-[#FF7C50] transition-colors"
+          <a href="/elmuntada/home#partenaires-section" class="font-medium hover:text-[#FF7C50] transition-colors"
             >Partenaires</a
+          >
+          <a href="/elmuntada/catalogue " class="font-medium hover:text-[#FF7C50] transition-colors"
+            >Catalogue</a
           >
         </div>
         <div class="flex gap-6 ml-4 pl-6 border-l border-[#643869]/20">
