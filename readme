@@ -1,29 +1,18 @@
 # TDW – Charitable Association Management Web Application
 
-**École Supérieure d’Informatique – Academic Year 2024/2025**  
-**Module TDW 2CS – Individual Project**
-
----
-
 This project is a full-featured, dynamic web application designed to help a charitable association manage its activities, members, partners, and public interactions. Developed using PHP (MVC pattern), HTML5, CSS3, JavaScript, and AJAX, the application aims to be intuitive, ergonomic, and fully functional, following modern web development best practices.
-
----
 
 ## 🌟 Project Overview
 
 The application provides:
-
-- **A public interface** for visitors and members to access association news, events, partner offers, make donations, and register as members or volunteers.
-- **An administrative dashboard** for managing all resources, memberships, partners, donations, notifications, and more.
+- A public interface for visitors and members to access association news, events, partner offers, make donations, and register as members or volunteers.
+- An administrative dashboard for managing all resources, memberships, partners, donations, notifications, and more.
 
 The architecture is based on the MVC (Model-View-Controller) paradigm, ensuring a clear separation between data, business logic, and presentation.
-
----
 
 ## ✨ Main Features
 
 ### Public & Member Area
-
 - **Homepage:** Logo, social links, news & partner slideshow, main activities, and a clear navigation menu.
 - **News & Activities:** Latest announcements and activities, with access to a full news archive.
 - **Partner Catalog:** Filterable by category (Hotels, Clinics, Schools, etc.), with detailed partner info and offers.
@@ -36,7 +25,6 @@ The architecture is based on the MVC (Model-View-Controller) paradigm, ensuring 
 - **Reviews & Suggestions:** Members can review partners and suggest app improvements.
 
 ### Administrative Area
-
 - **Partner Management:** Add, edit, or remove partners, manage and assign partner offers, and view partner statistics.
 - **Member Management:** Approve memberships, view/filter members, and manage renewals.
 - **Donations & Volunteering:** Validate and manage donations and volunteering events, with comprehensive statistics.
@@ -44,10 +32,7 @@ The architecture is based on the MVC (Model-View-Controller) paradigm, ensuring 
 - **Payments & Subscriptions:** Track member payments, manage subscriptions, and generate electronic receipts.
 - **App Settings:** Configure branding (logo, colors), security settings, and admin access rights.
 
----
-
 ## 📚 Technical Highlights
-
 - **MVC Architecture:** Clean separation of concerns for maintainability and scalability.
 - **Object-Oriented PHP:** All logic implemented using classes (including views).
 - **Dynamic Frontend:** Responsive design with HTML5, CSS3, JavaScript, and jQuery for a modern UX.
@@ -55,46 +40,9 @@ The architecture is based on the MVC (Model-View-Controller) paradigm, ensuring 
 - **MySQL Database:** Relational design for robust data management.
 - **QR Code Integration:** (Optional bonus) For member validation and partner operations.
 
----
-
 ## 🚀 Getting Started
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/djiheneguitoun/TDW.git
    cd TDW
-   ```
-
-2. **Configure your environment:**
-   - PHP 7.4+ and MySQL required.
-   - Set database credentials in `/config` or `/src/config`.
-
-3. **Populate the database:**  
-   Add at least 3 example records per table for demonstration.
-
-4. **Run locally:**  
-   Place the project in your web server directory and open the homepage in your browser.
-
----
-
-## 🛠️ Skills Developed
-
-- Modular, reusable coding practices
-- MVC structuring and object-oriented programming in PHP
-- Full-stack web development (Frontend & Backend)
-- Database design and management
-- Project planning and documentation
-
----
-
-## 📄 License
-
-This project is for educational purposes.  
-All external libraries require prior approval by the instructor.
-
----
-
-## 👤 Author
-
-Developed individually as part of the TDW 2CS module at École Supérieure d’Informatique.
-
